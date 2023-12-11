@@ -1,10 +1,11 @@
 import React , { useState } from "react";
 import LoginHeader from "./LoginHeader";
 import LoginForm from "./LoginForm";
-
+import Register from "./Register";
 function LoginPage(props) {
   const [account, setAccount] = useState({ username: "", password: "" });
   const [errors, setErrors] = useState('');
+  const [openRegister , setOpenRegister] = useState(true);
   const className = !Object.keys(errors).length ? " xl:w-[1000px]   m-auto mt-28 sm:flex block " :" xl:w-fit  m-auto mt-28 block ";
   const handleChange = ({target:{name,value}}) => {
     const acc = {...account};
@@ -28,6 +29,18 @@ function LoginPage(props) {
 
     console.log("SUBMITED")
    }
+
+   const handleCreateAcc = () => {
+    const isOpen = !openRegister;
+    console.log(isOpen);
+    setOpenRegister(isOpen)
+    
+   }
+const handleExit = () => {
+  const isOpen = !openRegister;
+  console.log(isOpen);
+  setOpenRegister(isOpen)
+}
   return (
     <div className={className}>
       <LoginHeader errors={errors} />
@@ -35,8 +48,12 @@ function LoginPage(props) {
       onSubmit={handleSubmit}
       account={account}
       onChange={handleChange}
-      errors={errors}/>
+      errors={errors}
+      onClick={handleCreateAcc}
+      />
+      {openRegister && <Register onExit = {handleExit} />}
     </div>
+
   );
 }
 

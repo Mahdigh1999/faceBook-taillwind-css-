@@ -1,7 +1,7 @@
 import React from "react";
 import LoginPageInput from "../common/LoginPageInput";
 import { Link } from "react-router-dom";
-function LoginForm({ onChange, account, onSubmit, errors }) {
+function LoginForm({ onChange, account, onSubmit, errors ,onClick}) {
   const render = !Object.keys(errors).length;
   const divClassName = render
     ? "shadow-2xl bg-white rounded-md lg:basis-5/12 md:basis-5/12 w-fit mx-auto pb-1"
@@ -11,7 +11,7 @@ function LoginForm({ onChange, account, onSubmit, errors }) {
     <div className={divClassName}>
       <form onSubmit={onSubmit} className="w-full max-w-lg mx-auto border border-gray-100">
         {!render && (
-          <div className="mx-auto border border-red-500  w-[92%] mt-3">
+          <div className="mx-auto border rounded-lg border-red-500  w-[92%] mt-3">
             <h4 className="mx-auto w-fit font-extrabold">Wrong Credentials</h4>
             <p className="indent-[25%]">invalid username and password</p>
           </div>
@@ -47,8 +47,9 @@ function LoginForm({ onChange, account, onSubmit, errors }) {
       </form>
       {render && (
         <button
+          onClick={onClick}
           type="button"
-          className="font-semibold    block my-3 mx-auto p-3 text-white   bg-green-200 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm    dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800"
+          className="font-semibold    block my-3 mx-auto p-3 text-white   bg-lime-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm    "
         >
           Create new account
         </button>

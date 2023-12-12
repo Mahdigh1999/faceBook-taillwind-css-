@@ -1,12 +1,21 @@
+import React,{Fragment} from 'react';
 import LoginPage from "./components/Login/LoginPage";
-
-
+import { Route,Routes } from "react-router-dom";
+import Register from "./components/Login/Register";
+import NavBar from './components/NavBar';
 function App() {
   return (
-    <div className="bg-gray-100 border border-gray-100 pb-[200px]">
-      <LoginPage />
-    </div>
+
+    <Fragment>    <NavBar /></Fragment>
+
+    // <Routes >
+      
+    //   <Route path="/login" element ={<LoginPage />}/>
+    //   <Route path="/Register" element= {<Register />}/>
+
+    //   </Routes>
   );
 }
+
 
 export default App;

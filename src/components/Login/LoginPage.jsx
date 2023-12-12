@@ -5,7 +5,7 @@ import Register from "./Register";
 function LoginPage(props) {
   const [account, setAccount] = useState({ username: "", password: "" });
   const [errors, setErrors] = useState('');
-  const [openRegister , setOpenRegister] = useState(true);
+  const [openRegister , setOpenRegister] = useState(false);
   const className = !Object.keys(errors).length ? " xl:w-[1000px]   m-auto mt-28 sm:flex block " :" xl:w-fit  m-auto mt-28 block ";
   const handleChange = ({target:{name,value}}) => {
     const acc = {...account};
@@ -42,6 +42,10 @@ const handleExit = () => {
   setOpenRegister(isOpen)
 }
   return (
+    <div className="bg-gray-100 border border-gray-100 pb-[200px]">
+
+      
+    
     <div className={className}>
       <LoginHeader errors={errors} />
       <LoginForm 
@@ -53,7 +57,7 @@ const handleExit = () => {
       />
       {openRegister && <Register onExit = {handleExit} />}
     </div>
-
+  </div>
   );
 }
 

@@ -2,7 +2,7 @@ import React,{Fragment} from 'react';
 import LoginPage from "./components/Login/LoginPage";
 import { Route,Routes } from "react-router-dom";
 import Register from "./components/Login/Register";
-import NavBar from './components/NavBar';
+import NavBar from './components/navbar/NavBar';
 function App() {
   return (
 

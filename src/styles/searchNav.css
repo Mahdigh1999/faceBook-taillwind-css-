@@ -1,0 +1,5 @@
+
+#navSearch:focus + label{
+    transition: 0.7s;
+    left: -30px;
+}
